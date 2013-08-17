@@ -1,3 +1,5 @@
+ORIGINAL:
+git clone git://git.lscube.org/pipes
 
 RUNNING:
 python pipes.py

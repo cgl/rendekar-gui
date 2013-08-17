@@ -2,8 +2,8 @@
 
 # Form implementation generated from reading ui file 'pipes.ui'
 #
-# Created: Mon Feb 23 13:25:13 2009
-#      by: PyQt4 UI code generator 4.4.4
+# Created: Sat Aug 17 16:49:40 2013
+#      by: PyQt4 UI code generator 4.7.2
 #
 # WARNING! All changes made in this file will be lost!
 
@@ -49,6 +49,7 @@ class Ui_MainWindow(object):
         sizePolicy.setVerticalStretch(0)
         sizePolicy.setHeightForWidth(self.conf_record_name.sizePolicy().hasHeightForWidth())
         self.conf_record_name.setSizePolicy(sizePolicy)
+        self.conf_record_name.setText("")
         self.conf_record_name.setObjectName("conf_record_name")
         self.horizontalLayout_2.addWidget(self.conf_record_name)
         self.verticalLayout_2.addLayout(self.horizontalLayout_2)
@@ -62,17 +63,15 @@ class Ui_MainWindow(object):
         self.label.setSizePolicy(sizePolicy)
         self.label.setObjectName("label")
         self.horizontalLayout_3.addWidget(self.label)
-        self.conf_record_video_codec = QtGui.QLineEdit(self.groupBox)
-        self.conf_record_video_codec.setEnabled(False)
-        self.conf_record_video_codec.setObjectName("conf_record_video_codec")
-        self.horizontalLayout_3.addWidget(self.conf_record_video_codec)
+        self.lineEdit = QtGui.QLineEdit(self.groupBox)
+        self.lineEdit.setObjectName("lineEdit")
+        self.horizontalLayout_3.addWidget(self.lineEdit)
         self.label_4 = QtGui.QLabel(self.groupBox)
         self.label_4.setObjectName("label_4")
         self.horizontalLayout_3.addWidget(self.label_4)
-        self.conf_record_audio_codec = QtGui.QLineEdit(self.groupBox)
-        self.conf_record_audio_codec.setEnabled(False)
-        self.conf_record_audio_codec.setObjectName("conf_record_audio_codec")
-        self.horizontalLayout_3.addWidget(self.conf_record_audio_codec)
+        self.dateEdit = QtGui.QDateEdit(self.groupBox)
+        self.dateEdit.setObjectName("dateEdit")
+        self.horizontalLayout_3.addWidget(self.dateEdit)
         self.verticalLayout_2.addLayout(self.horizontalLayout_3)
         self.horizontalLayout.addWidget(self.groupBox)
         self.groupBox_8 = QtGui.QGroupBox(self.frame)
@@ -226,7 +225,7 @@ class Ui_MainWindow(object):
         self.verticalLayout_3.addWidget(self.groupBox_3)
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QtGui.QMenuBar(MainWindow)
-        self.menubar.setGeometry(QtCore.QRect(0, 0, 746, 27))
+        self.menubar.setGeometry(QtCore.QRect(0, 0, 746, 23))
         self.menubar.setObjectName("menubar")
         MainWindow.setMenuBar(self.menubar)
         self.statusbar = QtGui.QStatusBar(MainWindow)
@@ -246,12 +245,9 @@ class Ui_MainWindow(object):
     def retranslateUi(self, MainWindow):
         MainWindow.setWindowTitle(QtGui.QApplication.translate("MainWindow", "Pipes", None, QtGui.QApplication.UnicodeUTF8))
         self.groupBox.setTitle(QtGui.QApplication.translate("MainWindow", "Record Options", None, QtGui.QApplication.UnicodeUTF8))
-        self.label_2.setText(QtGui.QApplication.translate("MainWindow", "Record Name:", None, QtGui.QApplication.UnicodeUTF8))
-        self.conf_record_name.setText(QtGui.QApplication.translate("MainWindow", "capture", None, QtGui.QApplication.UnicodeUTF8))
-        self.label.setText(QtGui.QApplication.translate("MainWindow", "Video Codec:", None, QtGui.QApplication.UnicodeUTF8))
-        self.conf_record_video_codec.setText(QtGui.QApplication.translate("MainWindow", "mpeg2video", None, QtGui.QApplication.UnicodeUTF8))
-        self.label_4.setText(QtGui.QApplication.translate("MainWindow", "Audio Codec:", None, QtGui.QApplication.UnicodeUTF8))
-        self.conf_record_audio_codec.setText(QtGui.QApplication.translate("MainWindow", "mp2", None, QtGui.QApplication.UnicodeUTF8))
+        self.label_2.setText(QtGui.QApplication.translate("MainWindow", "İsim 1", None, QtGui.QApplication.UnicodeUTF8))
+        self.label.setText(QtGui.QApplication.translate("MainWindow", "İsim 2", None, QtGui.QApplication.UnicodeUTF8))
+        self.label_4.setText(QtGui.QApplication.translate("MainWindow", "Tarih", None, QtGui.QApplication.UnicodeUTF8))
         self.groupBox_8.setTitle(QtGui.QApplication.translate("MainWindow", "Enable Streaming", None, QtGui.QApplication.UnicodeUTF8))
         self.conf_av_chk.setText(QtGui.QApplication.translate("MainWindow", "Audio and Video", None, QtGui.QApplication.UnicodeUTF8))
         self.conf_audio_only_chk.setText(QtGui.QApplication.translate("MainWindow", "Audio Only", None, QtGui.QApplication.UnicodeUTF8))
