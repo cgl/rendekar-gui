@@ -41,7 +41,8 @@ class RecordManager(object):
         self.ui.log('record', "--- STARTING RECORDER ---")
         try:
             enable_secondary_audio = self.window.conf_audio_only_chk.isChecked()
-            self.programs.dvgrab = shell.run_dvgrab(self.window.conf_record_name.text(), enable_secondary_audio)
+            filename = self.window.conf_record_name.text()+"-"+self.window.conf_record_name_2.text()+"-"+self.window.date.text().replace("/","-")+".mpg"
+            self.programs.dvgrab = shell.run_dvgrab(filename, enable_secondary_audio)
         except Exception, e:
             print e
             self.programs.dvgrab = None

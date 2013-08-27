@@ -94,7 +94,7 @@
              </widget>
             </item>
             <item>
-             <widget class="QLineEdit" name="lineEdit"/>
+             <widget class="QLineEdit" name="conf_record_name_2"/>
             </item>
             <item>
              <widget class="QLabel" name="label_4">
@@ -104,7 +104,7 @@
              </widget>
             </item>
             <item>
-             <widget class="QDateEdit" name="dateEdit"/>
+             <widget class="QDateEdit" name="date"/>
             </item>
            </layout>
           </item>
@@ -226,7 +226,16 @@
        <enum>QFrame::Raised</enum>
       </property>
       <layout class="QVBoxLayout" name="verticalLayout_14">
-       <property name="margin">
+       <property name="leftMargin">
+        <number>1</number>
+       </property>
+       <property name="topMargin">
+        <number>1</number>
+       </property>
+       <property name="rightMargin">
+        <number>1</number>
+       </property>
+       <property name="bottomMargin">
         <number>1</number>
        </property>
        <item>
@@ -448,7 +457,7 @@
      <x>0</x>
      <y>0</y>
      <width>746</width>
-     <height>23</height>
+     <height>22</height>
     </rect>
    </property>
   </widget>
