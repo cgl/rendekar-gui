@@ -73,7 +73,7 @@ class Recorder(object):
         self.record_ffmpeg= 'ffmpeg -y -re -f dv -i - -acodec mp2 -ab 128000 -vcodec mpeg2video -s 480x360 -vb 512000 -f mpeg %s -acodec mp2 -ab 48000 -ac 1 -f rtp rtp://localhost:1902 -an -vcodec mpeg2video -vb 200000 -s 320x200 -f rtp rtp://localhost:1900' % (record_name+'_' + stamp + '.mpg')
         self.more_ffmpegs = []
 
-        self.record_dvgrab='dvgrab -f hdv -size 0'
+        self.record_dvgrab='dvgrab -f hdv -size 0 -i rendekar-%s' %record_name
         self.record_ffmpeg='xargs echo'
 
 #  dvgrab -f hdv -size 0 -i $M2TDIR/rendekar-$KONUSMACI-$EVSAHIBIFN-$MISAFIRFN-$MACTARIHIFN- 2> $MYTTY
@@ -86,9 +86,9 @@ class Recorder(object):
     def start(self):
         cmd1 = self.record_dvgrab
         cmd2 = self.record_ffmpeg
-
-
+        print 'WILL EXECUTE',cmd1,'|',cmd2
         self.first = subprocess.Popen(cmd1, shell=True, close_fds=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+
         #check if source software has started, should perform a more reliable check in the future
         time.sleep(0.5)
         self.first.poll()
