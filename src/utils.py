@@ -30,6 +30,9 @@ def switch_port_entry_state(ui, option, state):
     else:
         for e in entry:
             e.setEnabled(False)
+
+def cleanText(text):
+    return text.replace(" ","_").replace("'","_").replace('"','_')
     
 class RecordManager(object):
     def __init__(self, ui, programs):
@@ -41,7 +44,10 @@ class RecordManager(object):
         self.ui.log('record', "--- STARTING RECORDER ---")
         try:
             enable_secondary_audio = self.window.conf_audio_only_chk.isChecked()
-            filename = self.window.conf_record_name.text()+"-"+self.window.conf_record_name_2.text()+"-"+self.window.date.text().replace("/","-")+".mpg"
+            name1 = cleanText(self.window.conf_record_name.text())
+            name2 = cleanText(self.window.conf_record_name_2.text())
+            date = self.window.date.text().replace("/","-")
+            filename = name1+"-"+name2+"-"+date
             self.programs.dvgrab = shell.run_dvgrab(filename, enable_secondary_audio)
         except Exception, e:
             print e
